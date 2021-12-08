@@ -1,6 +1,6 @@
 name: Actions workflow
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   run-github-actions:
@@ -10,7 +10,11 @@ jobs:
       - name: List Files
         run: |
            pwd
-           ls
+           ls -a
+            echo $GITHUB_SHA
+            echo $GITHUB_REPOSITORY
+            echo $GITHUB_WORSPACE
+            echo "${{ github.token }}"
 
       - name: Checkout 
         uses: actions/checkout@v1
