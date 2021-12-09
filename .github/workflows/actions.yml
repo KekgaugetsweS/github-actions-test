@@ -17,7 +17,7 @@ jobs:
     steps:
       
 
-      - name: List Files
+      - name: Lists Files
         run: |
            pwd
            ls -a
@@ -30,7 +30,7 @@ jobs:
 
       - name: Checkout 
         uses: actions/checkout@v1
-        
+
       - name: payload
         run: echo ${{ github.event.client_payload.env }}
       - name: List Files After Checkout
