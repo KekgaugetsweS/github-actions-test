@@ -15,8 +15,7 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: payload
-        run: echo ${{ github.event.client_payload.env }}
+      
 
       - name: List Files
         run: |
@@ -31,7 +30,9 @@ jobs:
 
       - name: Checkout 
         uses: actions/checkout@v1
-
+        
+      - name: payload
+        run: echo ${{ github.event.client_payload.env }}
       - name: List Files After Checkout
         run: |
            pwd
